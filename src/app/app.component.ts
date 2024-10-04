@@ -21,7 +21,12 @@ export class AppComponent implements OnInit {
   title = 'primeng18';
 
   constructor(private config: PrimeNGConfig) {
-    this.config.theme.set({ preset: Aura });
+    this.config.theme.set({
+      preset: Aura,
+      options: {
+        
+      }
+    });
   }
 
   ngOnInit() {
