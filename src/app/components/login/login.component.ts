@@ -5,6 +5,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from "@angular/router";
 import { NgIf } from "@angular/common";
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { MessageModule } from 'primeng/message';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,8 @@ import { NgIf } from "@angular/common";
     InputTextModule,
     ButtonModule,
     RouterModule,
+    FloatLabelModule,
+    MessageModule,
     NgIf
   ],
   templateUrl: './login.component.html',
