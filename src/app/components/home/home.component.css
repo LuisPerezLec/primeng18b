@@ -1,0 +1,8 @@
+.content {
+  transition: margin-left 0.1s;
+  margin: 4rem 0 0 4rem;
+}
+
+.content.shifted {
+  margin-left: 290px; /* Ancho del sidebar bien hardcodeado alv*/
+}
