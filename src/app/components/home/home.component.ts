@@ -19,6 +19,9 @@ import { ButtonModule } from "primeng/button";
 })
 export class HomeComponent implements OnInit{
   visible: boolean = false;
+  visibleCloseIcon: boolean = false;
+  showModalMask: boolean = false;
+  shiftMargin: boolean = this.visible;
   screenWidth: number = window.innerWidth;
 
   ngOnInit() {
@@ -43,5 +46,8 @@ export class HomeComponent implements OnInit{
   checkSidebarVisibility() {
     // Establece la visibilidad inicial según el tamaño de la pantalla
     this.visible = this.screenWidth >= 992; // Visibilidad true si es lg o más
+    this.visibleCloseIcon = this.screenWidth < 992;
+    this.showModalMask = this.screenWidth < 992;
+    this.shiftMargin = this.screenWidth >= 992;
   }
 }

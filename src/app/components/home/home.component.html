@@ -1,11 +1,11 @@
-<p-drawer [(visible)]="visible" [modal]="false" [showCloseIcon]="false" header="Drawer">
+<p-drawer [(visible)]="visible" [modal]="showModalMask" [showCloseIcon]="visibleCloseIcon" header="Drawer">
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         aliquip ex ea commodo consequat.
     </p>
 </p-drawer>
-<div [ngClass]="{'content': true, 'shifted': visible}">
+<div [ngClass]="{'content': true, 'shifted': shiftMargin}">
     <div *ngIf="isVisible()">
         <p-button (click)="toggleSidebar()" icon="pi pi-bars" />
     </div>
