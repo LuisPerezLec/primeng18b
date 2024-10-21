@@ -15,5 +15,5 @@ import { StepsModule } from 'primeng/steps';
   styleUrl: './stepper.component.css'
 })
 export class StepperComponent {
-
+  activeStep: number = 0;
 }

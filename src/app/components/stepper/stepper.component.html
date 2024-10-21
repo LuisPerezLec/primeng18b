@@ -1,16 +1,44 @@
 <div class="card">
-    <p-stepper [activeStep]="1">
-        <!--StepperModule-->
-        <p-stepper-content></p-stepper-content>
-        <p-stepper-header></p-stepper-header>
-        <p-stepper-panel></p-stepper-panel>
-        <p-stepper-separator></p-stepper-separator>
-        <p-stepperContent></p-stepperContent>
-        <p-stepperHeader></p-stepperHeader>
-        <p-stepperPanel></p-stepperPanel>
-        <p-stepperSeparator></p-stepperSeparator>
-        
-        <!--StepsModule-->
-        <p-steps></p-steps>
+    <p-stepper orientation="vertical" [(activeStep)]="activeStep">
+      <p-stepperPanel header="Header I">
+        <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+          <div class="flex flex-column h-12rem">
+            <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+              Content I
+            </div>
+          </div>
+          <div class="flex py-4">
+            <p-button label="Next" (click)="nextCallback.emit()"></p-button>
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+  
+      <p-stepperPanel header="Header II">
+        <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+          <div class="flex flex-column h-12rem">
+            <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+              Content II
+            </div>
+          </div>
+          <div class="flex py-4 gap-2">
+            <p-button label="Back" severity="secondary" (click)="prevCallback.emit()"></p-button>
+            <p-button label="Next" (click)="nextCallback.emit()"></p-button>
+          </div>
+        </ng-template>
+      </p-stepperPanel>
+  
+      <p-stepperPanel header="Header III">
+        <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
+          <div class="flex flex-column h-12rem">
+            <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+              Content III
+            </div>
+          </div>
+          <div class="flex py-4">
+            <p-button label="Back" (click)="prevCallback.emit()"></p-button>
+          </div>
+        </ng-template>
+      </p-stepperPanel>
     </p-stepper>
-</div>
+  </div>
+  
